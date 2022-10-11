@@ -87,7 +87,7 @@ const childNodes2 = document.querySelector('#second-div').childNodes[1];
 
 function changeText() {
   childNodes.innerText = "I just changed it to something else";
-childNodes2.innerText = "I just changed it to something else, but querySelectorAll does not work";
+childNodes2.innerText = "I just changed it to something else, but querySelectorAll does not work  - apparently querySelectorAll returns an array, so we need to use for loops!";
 }
 
 //It works
