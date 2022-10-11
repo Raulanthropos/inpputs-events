@@ -1,0 +1,226 @@
+<html>
+  <head>
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <h1 id="MyElement">This is the title of the page</h1>
+      <h2>This is the subtitle of the page</h2>
+    </div>
+
+    <div>
+      <hr />
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <a href="https://epicode.it">This link goes to Epicode</a>
+
+      <div class="your_div" id="first-div-with-p">
+        <p>This text is just for the exercise</p>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          id="input-field"
+          placeholder="input field for the exercise"
+        />
+      </div>
+    </div>
+
+    <div class="your_div" id="second-div">
+      <p>And this text is just for the exercise too!</p>
+      <h2 style="color: red">
+        Save this page on your computer and open it with VSCode to get the
+        questions!
+      </h2>
+    </div>
+    <script>
+      /* EXERCISE 1
+     Write a function for changing the title of the document in something else.
+    */
+
+      const changeTitle = function (newTitle) {
+        const changingOfTheTitle = document.querySelector("h1");
+        changingOfTheTitle.innerText = "changed title";
+      };
+
+      //It works
+      // changeTitle();
+
+      /* EXERCISE 2
+     Write a function for changing the class of the title of the page in "myHeading".
+    */
+
+    function changeClass(){
+
+      const artIon = document.getElementById("MyElement").className += "myHeading";
+      console.log(artIon);
+
+    }
+
+    //It works
+    //changeClass();
+
+
+      /* EXERCISE 3
+     Write a function for changing the text of only the p which are children of a div.
+    */
+
+const childNodes = document.querySelector('.your_div').childNodes[1];
+const childNodes2 = document.querySelector('#second-div').childNodes[1];
+
+function changeText() {
+  childNodes.innerText = "I just changed it to something else";
+childNodes2.innerText = "I just changed it to something else, but querySelectorAll does not work";
+}
+
+//It works
+// changeText();
+
+      /* EXERCISE 4
+     Write a function for changing the href property of every link to https://www.google.com
+    */
+
+      const changeUrls = function () {
+        const changedLinks = document.querySelector("a");
+        changedLinks.setAttribute("href", "https://www.google.com")
+        console.log(changedLinks);
+      };
+
+
+      //It works
+      // changeUrls();
+
+
+      /* EXERCISE 5
+     Write a function for adding a new list item in the second unordered list.
+    */
+
+//Write a function for adding a new list item in the unordered list?
+
+      const addToTheSecond = function () {
+            const ulDos = document.getElementById("secondList")
+            const newLi = document.createElement("li")
+            newLi.innerText = "New List Item"
+            ulDos.appendChild(newLi);
+            console.log(ulDos);
+      };
+
+      //It works
+      // addToTheSecond();
+
+      /* EXERCISE 6
+     Write a function for adding a second paragraph to the first div.
+    */
+
+      const addParagraph = function () {
+        const firstDivWithP = document.getElementById("first-div-with-p");
+        const newP = document.createElement("p");
+        newP.innerText = "This is a new paragraph"
+        firstDivWithP.appendChild(newP);
+        console.log(firstDivWithP);
+      };
+
+      //It works
+      // addParagraph();
+
+      /* EXERCISE 7
+     Write a function for making the first unordered list disappear.
+    */
+
+      const firstUlDisappear = function () {
+        const ulDisappear = document.querySelector("ul");
+        ulDisappear.style.display = "none";
+        console.log(ulDisappear);
+      };
+
+      //It works
+      // firstUlDisappear();
+      
+      /* EXERCISE 8
+     Write a function for making the background of every unordered list green.
+    */
+
+      const paintItGreen = function () {
+        const ulGreen = document.querySelector("ul");
+        const ulGreen2 = document.getElementById("secondList");
+        ulGreen.style.backgroundColor = "green";
+        ulGreen2.style.backgroundColor = "green";
+        console.log(ulGreen);
+        console.log(ulGreen2);
+      };
+
+      //It works, but 2nd ul I had to fetch usind ID, querySelectorAll did not work...
+      // paintItGreen();
+
+      /* EXERCISE 9
+     Make the heading of the page change color every time the user clicks on it.
+    */
+      const h1 = document.querySelector("h1");
+      const makeItClickable = h1.addEventListener('click', function() {
+        h1.style.color = "red";
+      });
+
+      //It works
+
+      /* EXERCISE 10
+     Change the footer text with something else when the user clicks on it.
+    */
+
+      const changeFooterText = function () {
+        const footer = document.getElementById("second-div");
+        const changeFooter = footer.addEventListener('click', function() {
+        footer.innerText = "Something else";
+        console.log(footer)
+      });
+      };
+
+      //It works.
+
+      changeFooterText();
+
+
+      /* EXERCISE 11
+     Attach an event listener to the input field in the page that changes the text of the page's subtitle
+    */
+
+      const inputField = document.getElementById("input-field");
+      inputField.addEventListener('input', function(event) {
+        const subtitle = document.querySelector("h2");
+        subtitle.innerText = event.target;
+      })
+
+      /* EXERCISE 12
+     Create an alert message when the page loads.
+    */
+
+      window.onload = function () {
+        alert("Alert message!")
+      };
+
+      /* EXERCISE 13
+     Use HTML5 tags to properly provide semantic meaning to the different portions of the page.
+    */
+
+      /* ### EXTRA ###  EXERCISE 14
+     Create an input of type "color" and use it to change the color of the subtitle
+    */
+    </script>
+  </body>
+</html>
