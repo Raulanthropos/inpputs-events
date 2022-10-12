@@ -55,7 +55,7 @@
      Write a function for changing the title of the document in something else.
     */
 
-      const changeTitle = function (newTitle) {
+      const changeTitle = function () {
         const changingOfTheTitle = document.querySelector("h1");
         changingOfTheTitle.innerText = "changed title";
       };
@@ -99,7 +99,7 @@ childNodes2.innerText = "I just changed it to something else, but querySelectorA
 
       const changeUrls = function () {
         const changedLinks = document.querySelector("a");
-        changedLinks.setAttribute("href", "https://www.google.com")
+        changedLinks.setAttribute("href", "https://www.google.com");
         console.log(changedLinks);
       };
 
